@@ -12,5 +12,17 @@
     "firebase-admin": "~5.12.1",
     "firebase-functions": "^1.0.3"
   },
-  "private": true
+  "jest": {
+    "testMatch": [
+      "<rootDir>/test/*.test.js"
+    ],
+    "testEnvironment": "node",
+    "transform": {
+      "^.+\\.(js|jsx|mjs)$": "<rootDir>/node_modules/babel-jest"
+    }
+  },
+  "private": true,
+  "devDependencies": {
+    "jest": "^23.1.0"
+  }
 }
