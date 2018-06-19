@@ -20,6 +20,12 @@ exports.store = functions.https.onRequest((request, response) => {
       orderID: 'E2H45JW',
       token: 'dsafdsafdsafdsafasf'
     };
-    db.collection('orders').add(order);
-    response.send('Done');
+    db.collection('orders').add(order).then(() => {
+        console.log('added order');
+        response.send('Added order');
+    }, (error) => {
+        console.error('Failed to add order');
+        console.error(error);
+        response.send('Fail');
+    });
 });
